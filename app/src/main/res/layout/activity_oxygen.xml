@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.oxygen.OxygenActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <in.unicodelabs.kdgaugeview.KdGaugeView
+        android:id="@+id/speedMeter"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        app:dialSpeedColor="@color/colorGreen"
+        app:speedTextSize="70dp"
+        app:animationTime="30000"
+        app:speed_limit="70"
+        android:layout_marginTop="10dp"
+        app:unitOfMeasurement="Oxygen (%)"
+        app:unitOfMeasurementTextSize="12dp"
+        app:maxSpeed="100"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USAGE"
+            android:textSize="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/dateTv"
+                android:text="Date"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imgPicker"
+                android:text="Pick Date"
+                android:src="@drawable/ic_calender"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_marginTop="20dp"
+        android:id="@+id/lineChart"
+        android:minHeight="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
