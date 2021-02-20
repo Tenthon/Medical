@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class LanguageViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is slideshow Fragment"
+        value = "Menu Bahasa"
     }
     val text: LiveData<String> = _text
 }

@@ -5,21 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.activity.nitrous_oxide.NitrousActivity">
+    tools:context=".view.activity.medical_air.MedicalAirActivity">
 
     <include layout="@layout/toolbar"/>
 
     <in.unicodelabs.kdgaugeview.KdGaugeView
-        android:id="@+id/speedMeterNitrous"
+        android:id="@+id/speedMeterMedical"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_gravity="center"
-        app:dialSpeedColor="@color/colorBlue"
+        app:dialSpeedColor="@color/colorYellow"
         app:speedTextSize="70dp"
         app:animationTime="30000"
         app:speed_limit="70"
         android:layout_marginTop="10dp"
-        app:unitOfMeasurement="Nitrous Oxide (%)"
+        app:unitOfMeasurement="Medical Air (%)"
         app:unitOfMeasurementTextSize="12dp"
         app:maxSpeed="100"/>
 
@@ -45,7 +45,7 @@
             android:layout_marginRight="20dp">
 
             <TextView
-                android:id="@+id/dateTvNitrous"
+                android:id="@+id/dateTvMedical"
                 android:text="Date"
                 android:textSize="20sp"
                 android:layout_gravity="center"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content" />
 
             <ImageView
-                android:id="@+id/imgPickerNitrous"
+                android:id="@+id/imgPickerMedical"
                 android:text="Pick Date"
                 android:src="@drawable/ic_calender"
                 android:layout_gravity="center"
@@ -67,7 +67,7 @@
 
     <com.github.mikephil.charting.charts.LineChart
         android:layout_marginTop="20dp"
-        android:id="@+id/lineChartNitrous"
+        android:id="@+id/lineChartMedical"
         android:minHeight="200dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

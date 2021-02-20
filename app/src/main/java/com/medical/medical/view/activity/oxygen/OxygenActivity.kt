@@ -23,7 +23,7 @@ class OxygenActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oxygen)
-        setToolbar()
+        setToolbar("Oxygen")
         speedMeter.setSpeed(100F)
         Handler(Looper.getMainLooper()).postDelayed({
             speedMeter.setSpeed(-30F)

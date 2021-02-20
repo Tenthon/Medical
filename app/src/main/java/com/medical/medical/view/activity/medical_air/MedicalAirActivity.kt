@@ -1,4 +1,4 @@
-package com.medical.medical.view.activity.nitrous_oxide
+package com.medical.medical.view.activity.medical_air
 
 import android.app.DatePickerDialog
 import android.graphics.Color
@@ -14,23 +14,23 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.medical.medical.R
 import com.medical.medical.base.BaseActivity
 import com.medical.medical.utils.AxisDateFormatter
-import kotlinx.android.synthetic.main.activity_nitrous.*
-import kotlinx.android.synthetic.main.activity_oxygen.*
+import kotlinx.android.synthetic.main.activity_medical_air.*
 import java.util.*
 
-class NitrousActivity : BaseActivity() {
+class MedicalAirActivity : BaseActivity() {
     private var tanggal: Int? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_nitrous)
-        setToolbar("Nitrous Oxide")
-        speedMeterNitrous.setSpeed(100F)
+        setContentView(R.layout.activity_medical_air)
+
+        setToolbar("Medical Air")
+        speedMeterMedical.setSpeed(100F)
         Handler(Looper.getMainLooper()).postDelayed({
-            speedMeterNitrous.setSpeed(-30F)
+            speedMeterMedical.setSpeed(-30F)
         }, 15000)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            speedMeterNitrous.setSpeed(90F)
+            speedMeterMedical.setSpeed(90F)
 
         }, 25000)
         val c = Calendar.getInstance()
@@ -38,13 +38,13 @@ class NitrousActivity : BaseActivity() {
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
         tanggal = month + 1
-        dateTvNitrous.text = "$day" + " , " + tanggal + " , " + year
+        dateTvMedical.text = "$day" + " , " + tanggal + " , " + year
 
-        imgPickerNitrous.setOnClickListener {
+        imgPickerMedical.setOnClickListener {
             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 // Display Selected date in TextView
                 tanggal = month + 1
-                dateTvNitrous.text = "$dayOfMonth , $tanggal , $year"
+                dateTvMedical.text = "$dayOfMonth , $tanggal , $year"
             }, year, month, day)
             dpd.show()
 
@@ -52,34 +52,34 @@ class NitrousActivity : BaseActivity() {
 
 
         val oxygenData = ArrayList<Entry>()
-        oxygenData.add(Entry(0F, 49F))
-        oxygenData.add(Entry(1F, 13F))
-        oxygenData.add(Entry(2F, 96F))
-        oxygenData.add(Entry(3F, 06F))
-        oxygenData.add(Entry(4F, 81F))
-        oxygenData.add(Entry(5F, 18F))
+        oxygenData.add(Entry(0F, 59F))
+        oxygenData.add(Entry(1F, 23F))
+        oxygenData.add(Entry(2F, 16F))
+        oxygenData.add(Entry(3F, 16F))
+        oxygenData.add(Entry(4F, 21F))
+        oxygenData.add(Entry(5F, 38F))
         oxygenData.add(Entry(6F, 47F))
-        oxygenData.add(Entry(7F, 18F))
-        oxygenData.add(Entry(8F, 37F))
-        oxygenData.add(Entry(9F, 19F))
+        oxygenData.add(Entry(7F, 58F))
+        oxygenData.add(Entry(8F, 67F))
+        oxygenData.add(Entry(9F, 79F))
 
         val oxygenSet = LineDataSet(oxygenData, "Oxygen")
         oxygenSet.mode = LineDataSet.Mode.CUBIC_BEZIER
-        oxygenSet.color = Color.BLUE
+        oxygenSet.color = Color.YELLOW
         oxygenSet.circleRadius = 5f
-        oxygenSet.setCircleColor(Color.BLUE)
+        oxygenSet.setCircleColor(Color.YELLOW)
 
-        val legend = lineChartNitrous.legend
+        val legend = lineChartMedical.legend
         legend.isEnabled = true
         legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP
         legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
         legend.orientation = Legend.LegendOrientation.HORIZONTAL
         legend.setDrawInside(false)
 
-        lineChartNitrous.description.isEnabled = false
-        lineChartNitrous.xAxis.position = XAxis.XAxisPosition.BOTTOM
-        lineChartNitrous.data = LineData(oxygenSet)
-        lineChartNitrous.animateXY(100, 500)
+        lineChartMedical.description.isEnabled = false
+        lineChartMedical.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        lineChartMedical.data = LineData(oxygenSet)
+        lineChartMedical.animateXY(100, 500)
 
         var date = ArrayList<String>();
         date.add("01-Apr")
@@ -94,70 +94,70 @@ class NitrousActivity : BaseActivity() {
         date.add("10-Apr")
 
         val dateMonth = AxisDateFormatter(date.toArray(arrayOfNulls<String>(date.size)))
-        lineChartNitrous.xAxis?.valueFormatter = dateMonth;
+        lineChartMedical.xAxis?.valueFormatter = dateMonth;
 
         Handler(Looper.getMainLooper()).postDelayed({
             val oxygenData = ArrayList<Entry>()
-            oxygenData.add(Entry(0F, 49F))
-            oxygenData.add(Entry(1F, 13F))
-            oxygenData.add(Entry(2F, 96F))
-            oxygenData.add(Entry(3F, 06F))
-            oxygenData.add(Entry(4F, 81F))
-            oxygenData.add(Entry(5F, 18F))
+            oxygenData.add(Entry(0F, 59F))
+            oxygenData.add(Entry(1F, 23F))
+            oxygenData.add(Entry(2F, 16F))
+            oxygenData.add(Entry(3F, 16F))
+            oxygenData.add(Entry(4F, 21F))
+            oxygenData.add(Entry(5F, 38F))
             oxygenData.add(Entry(6F, 47F))
-            oxygenData.add(Entry(7F, 08F))
-            oxygenData.add(Entry(8F, 37F))
-            oxygenData.add(Entry(9F, 09F))
+            oxygenData.add(Entry(7F, 58F))
+            oxygenData.add(Entry(8F, 77F))
+            oxygenData.add(Entry(9F, 89F))
 
             val oxygenSet = LineDataSet(oxygenData, "Oxygen")
             oxygenSet.mode = LineDataSet.Mode.CUBIC_BEZIER
-            oxygenSet.color = Color.BLUE
+            oxygenSet.color = Color.YELLOW
             oxygenSet.circleRadius = 5f
-            oxygenSet.setCircleColor(Color.BLUE)
+            oxygenSet.setCircleColor(Color.YELLOW)
 
-            val legend = lineChartNitrous.legend
+            val legend = lineChartMedical.legend
             legend.isEnabled = true
             legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP
             legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
             legend.orientation = Legend.LegendOrientation.HORIZONTAL
             legend.setDrawInside(false)
 
-            lineChartNitrous.description.isEnabled = false
-            lineChartNitrous.xAxis.position = XAxis.XAxisPosition.BOTTOM
-            lineChartNitrous.data = LineData(oxygenSet)
-            lineChartNitrous.animateXY(100, 500)
+            lineChartMedical.description.isEnabled = false
+            lineChartMedical.xAxis.position = XAxis.XAxisPosition.BOTTOM
+            lineChartMedical.data = LineData(oxygenSet)
+            lineChartMedical.animateXY(100, 500)
         }, 15000)
 
         Handler(Looper.getMainLooper()).postDelayed({
             val oxygenData = ArrayList<Entry>()
-            oxygenData.add(Entry(0F, 49F))
-            oxygenData.add(Entry(1F, 13F))
-            oxygenData.add(Entry(2F, 96F))
-            oxygenData.add(Entry(3F, 06F))
-            oxygenData.add(Entry(4F, 81F))
-            oxygenData.add(Entry(5F, 18F))
+            oxygenData.add(Entry(0F, 59F))
+            oxygenData.add(Entry(1F, 23F))
+            oxygenData.add(Entry(2F, 16F))
+            oxygenData.add(Entry(3F, 16F))
+            oxygenData.add(Entry(4F, 21F))
+            oxygenData.add(Entry(5F, 38F))
             oxygenData.add(Entry(6F, 47F))
-            oxygenData.add(Entry(7F, 28F))
-            oxygenData.add(Entry(8F, 47F))
-            oxygenData.add(Entry(9F, 29F))
+            oxygenData.add(Entry(7F, 58F))
+            oxygenData.add(Entry(8F, 57F))
+            oxygenData.add(Entry(9F, 69F))
 
             val oxygenSet = LineDataSet(oxygenData, "Oxygen")
             oxygenSet.mode = LineDataSet.Mode.CUBIC_BEZIER
-            oxygenSet.color = Color.BLUE
+            oxygenSet.color = Color.YELLOW
             oxygenSet.circleRadius = 5f
-            oxygenSet.setCircleColor(Color.BLUE)
+            oxygenSet.setCircleColor(Color.YELLOW)
 
-            val legend = lineChartNitrous.legend
+            val legend = lineChartMedical.legend
             legend.isEnabled = true
             legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP
             legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
             legend.orientation = Legend.LegendOrientation.HORIZONTAL
             legend.setDrawInside(false)
 
-            lineChartNitrous.description.isEnabled = false
-            lineChartNitrous.xAxis.position = XAxis.XAxisPosition.BOTTOM
-            lineChartNitrous.data = LineData(oxygenSet)
-            lineChartNitrous.animateXY(100, 500)
+            lineChartMedical.description.isEnabled = false
+            lineChartMedical.xAxis.position = XAxis.XAxisPosition.BOTTOM
+            lineChartMedical.data = LineData(oxygenSet)
+            lineChartMedical.animateXY(100, 500)
         }, 25000)
     }
 }

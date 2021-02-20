@@ -63,7 +63,8 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    fun setToolbar() {
+    fun setToolbar(title: String) {
+        textBar.text = title
         btnBack.setOnClickListener { this.finish() }
     }
 
