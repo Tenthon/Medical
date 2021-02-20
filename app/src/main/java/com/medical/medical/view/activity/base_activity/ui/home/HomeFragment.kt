@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.medical.medical.R
 import com.medical.medical.base.BaseFragment
+import com.medical.medical.view.activity.nitrous_oxide.NitrousActivity
 import com.medical.medical.view.activity.oxygen.OxygenActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -31,6 +32,10 @@ class HomeFragment : BaseFragment() {
         views = view
         cardOxygen.setOnClickListener {
             goto(OxygenActivity::class.java)
+        }
+
+        cardNitrous.setOnClickListener {
+            goto(NitrousActivity::class.java)
         }
     }
 }

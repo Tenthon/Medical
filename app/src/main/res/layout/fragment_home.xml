@@ -75,7 +75,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardFashion"
+                android:id="@+id/cardNitrous"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginLeft="20dp"

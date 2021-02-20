@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.medical.medical.view.activity.base_activity.ui.gallery.GalleryFragment"
+        android:name="com.medical.medical.view.activity.base_activity.ui.gallery.SettingFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_setting" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.medical.medical.view.activity.base_activity.ui.slideshow.SlideshowFragment"
+        android:name="com.medical.medical.view.activity.base_activity.ui.slideshow.LanguageFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_language" />
 </navigation>

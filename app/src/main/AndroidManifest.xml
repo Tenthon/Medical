@@ -17,7 +17,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,MissingClass"
         tools:replace="android:label,theme,android:allowBackup,android:icon,android:supportsRtl">
-        <activity android:name=".view.activity.oxygen.OxygenActivity"></activity>
+        <activity android:name=".view.activity.nitrous_oxide.NitrousActivity"></activity>
+        <activity android:name=".view.activity.oxygen.OxygenActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_home"
